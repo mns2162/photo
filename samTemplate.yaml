@@ -42,5 +42,6 @@ Resources:
         S3Event:
           Type: S3
           Properties:
-            Bucket: !Ref BucketIndex1
-            Events: s3:ObjectCreated
+            Bucket: 
+              Ref: BucketIndex1
+            Events: s3:ObjectCreated:*
