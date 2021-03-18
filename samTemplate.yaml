@@ -22,6 +22,8 @@ Resources:
       Environment:
         Variables:
           REGION: us-east-1
+  BucketIndex1:
+    Type: 'AWS::S3::Bucket'
   CDIndexLambda:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -37,12 +39,8 @@ Resources:
         Variables:
           REGION: us-east-1
       Events:
-        BucketEvent1:
+        S3Event:
           Type: S3
           Properties:
-            Bucket:
-              Ref: BucketIndex1
-            Events:
-              - 's3:ObjectCreated'
-  BucketIndex1:
-    Type: 'AWS::S3::Bucket'
+            Bucket: !Ref BucketIndex1
+            Events: s3:ObjectCreated
