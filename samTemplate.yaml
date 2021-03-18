@@ -41,5 +41,8 @@ Resources:
           Type: S3
           Properties:
             Bucket:
-              Ref: 'vc-album-b2'
-            Events: 's3:ObjectCreated'
+              Ref: BucketIndex1
+            Events:
+              - 's3:ObjectCreated'
+  BucketIndex1:
+    Type: 'AWS::S3::Bucket'
