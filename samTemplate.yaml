@@ -44,4 +44,4 @@ Resources:
           Properties:
             Bucket: 
               Ref: BucketIndex1
-            Events: s3:ObjectCreated:*
+            Events: s3:ObjectCreated:Put
