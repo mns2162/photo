@@ -4,7 +4,7 @@ from datetime import datetime
 from temp.elasticsearch import Elasticsearch
 
 def lambda_handler(event, context):
-    #comment for pipeline trigger
+    
     bucket=event['Records'][0]['s3']['bucket']['name']
     file=event['Records'][0]['s3']['object']['key']
     
